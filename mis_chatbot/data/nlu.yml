@@ -1,0 +1,265 @@
+version: "3.0"
+nlu:
+- regex: order_number
+  examples: |
+    - \d+
+- regex: ticket_number
+  examples: |
+    - \d+
+- regex: employee_id
+  examples: |
+    - ^[0-9]{7}$
+
+- regex: employee_number
+  examples: |
+    - ^[0-9]{7}$
+
+- intent: out_scope
+  examples: |
+    - ajhsdbfjhsabvdjfhsabfjsbf
+    - asd
+    - aer
+    - hh
+    - nij
+    - uhbybuinbsaifsnafsan
+    - nnna anansjdnfia kas fdhsbf
+    - absdifbsifbwfbbfufusbias
+    - kjsankjfsaiuwqhiuehvjhbiushofa
+    - hh h h hh h h h aufyac  ytavytsdvsauy
+
+- lookup: scf_type
+  examples: |
+    - Promotion
+    - Demotion
+    - Leave
+    - Leave of Absence
+    - Termination
+    - Store Transfer
+    - Transfer Store
+    - Pay Change
+    - Return for Leave
+    - Return for Leave of Absence
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thanks
+    - thank you
+- intent: affirm
+  examples: |
+    - [indeed](user_scf)
+    - [correct](user_scf)
+    - ok
+    - ok Bro
+    - okie
+    - okie dokie
+    - yes(user_scf)
+    - y(user_scf)
+    - [of course](user_scf)
+    - [yeah](user_scf)
+    - sure
+    - [yes](user_scf)
+    - [yes i did](user_scf)
+    - Yes I have
+- intent: deny
+  examples: |
+    - [no](user_scf)
+    - [not really](user_scf)
+    - [nope](user_scf)
+    - [no](user_scf)
+    - [noooo](user_scf)
+    - [nooo](user_scf)
+    - [absolutely not](user_scf)
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: help
+  examples: |
+    - what can you do?
+    - help
+    - help me please
+    - i need your help?
+    - i need help
+    - Could you help me?
+    - Can you help me?
+    - I need a support
+    - support me please
+- intent: que
+  examples: |
+    - please [transfer store](scf_type) albert to honkong
+    - demotion user to rsm
+    - please demotion
+    - request for leave
+    - request for demotion
+    - submit the promotion from tm to rsm
+    - promotion hassan to rsm
+    - terminate user
+    - submit transfer East Haven Foxon from lowa East to lowa West
+    - Request for employee termination.
+    - terminate my employee
+    - Submit Termination Form
+    - Termination Form
+    - submit form for Termination
+    - how can I submit form for my employee Termination
+    - can you submit Termination form for me
+    - submit Termination form
+    - Procedure for Termination Form
+    - Process for Termination Form
+    - Transfer  employee
+    - submit store transfer request
+    - Process for Store Transfer Form
+    - Submit Store Transfer Form
+    - Possible way to submit Store Transfer Form.
+    - Submit form for promotion
+    - Submit form for employee promotion
+    - Request for employee promotion
+    - Can you submit Promotion form for me
+    - Procedure for Promotion Form
+    - Process for Promotion form.
+    - Submit Demotion Form
+    - request for employee demotion
+    - Employee demotion form
+    - how can I submit form for my employee Demotion
+    - request for my employee Demotion
+    - Demotion For employee
+    - Demotion submission
+    - submit Demotion form for me
+    - Procedure for Demotion Form
+    - Process for Demotion Form
+    - possible way to submit Demotion Form
+    - Submit Pay Change Form
+    - Pay Change Form
+    - please submit pay change for ali
+    - Change Pay for user
+    - increase pay for user
+    - decrease pay for user
+    - submit form for Pay Change
+    - Employ pay change request.
+    - Leave  Absence employee form
+    - Leave of Absence submission
+    - request for employee absence.
+    - Request for leave.
+    - Leave request for employee.
+    - Process for Leave of Absence Form
+    - possible way to submit leave absence form.
+    - Submit Return for Leave Form
+    - Return for Leave Form
+    - Return for Leave
+    - Leave Form
+
+- intent: inform
+  examples: |
+    - show me the status of [promotion](scf_type) request
+    - show me the status of [leave of absence](scf_type) request
+    - show me the status of [return from leave](scf_type) request
+    - show me the status of [transfer](scf_type) request
+    - show me the status of [leave](scf_type) request
+    - show me the status of [return leave](scf_type) request
+    - i want to see the status of [pay change](scf_type) request
+    - i want to see the status of [leave of absence](scf_type) request
+    - i want to see the status of [leave](scf_type) request
+    - i want to see the status of [return leave](scf_type) request
+    - i want to check the status of [termination](scf_type) request of [ali](employee)
+    - i want to check the status of [termination](scf_type) request of [jeromy](employee)
+    - i want to check the status of [promotion](scf_type) request of [awais](employee)
+    - i want to check the status of [demotion](scf_type) request of [amjad](employee)
+    - i want to check the status of [pay change](scf_type) request of [jamws](employee)
+    - i want to check the status of [leave of absence](scf_type) request of [hassan](employee)
+    - i want to check the status of [return from leave](scf_type) request of [fayyaz](employee)
+    - i want to check the status of [transfer](scf_type) request of [haseeb](employee)
+    - i want to check the status of [leave](scf_type) request of [jon](employee)
+    - i want to check the status of [return leave](scf_type) request of [uzair](employee)
+    - [termination](scf_type) request of [ali](employee)
+    - i want see [demotion](scf_type) for [huzaifa](employee)
+    - [demotion](scf_type) request of [awais](employee)
+    - [pay change](scf_type) request of [amjad](employee)
+    - [store transfer](scf_type) request of [jamws](employee)
+    - [return from leave](scf_type) request of [hassan](employee)
+    - [leave] request of [fayyaz](employee)
+    - [transfer](scf_type) request of [haseeb](employee)
+    - [leave of absence](scf_type) request of [jon](employee)
+    - my employee name is [jeromy](employee)
+    - employee is [hasan](employee)
+
+
+- intent: working_hours
+  examples: |
+    - I want to know about my working hours.
+    - I want to know my total working hours.
+    - tell me about my working hours.
+    - tell me my total working hours.
+    - what are my total working hours.
+    - how much my working hours.
+
+- intent: time_working
+  examples: |
+    - my employee id is [11678913](employee_id)
+    - employee id is [1561230](employee_id)
+    - [1114567](employee_id)
+    - [2019-02-29](date)
+    - [2023-01-12](date) 
+    - [2022-03-30](date)
+    - [2018-12-01](date) 
+    - [2023-11-12](date) 
+    - the date is [2019-06-29](date)
+    - the date is [2000-10-22](date)
+    - the date is [2022-03-30](date)  
+    - date [2022-08-12](date)
+    - date [2014-09-13](date)
+    - date [2020-07-14](date)
+
+- intent: time_correction
+  examples: |
+    - when was my [shift start](event) at [2019-06-29](date_number) my employee id is [11678913](employee_number)
+    - can you check my [shift start](event) at [2023-06-29](date_number)
+    - tell me my [shift start](event) at [2018-06-29](date_number)
+    - please tell my [shift start](event) at [2022-06-29](date_number)
+    - my [shift end](event) at [2020-06-29](date_number)
+    - when was my [shift end](event) at [2019-06-29](date_number)
+    - can you check my [shift end](event) at [2023-06-29](date_number)
+    - tell me my [shift end](event) at [2018-06-29](date_number)
+    - please tell my [shift end](event) at [2022-06-29](date_number)
+    - my [shift end](event) at [2020-06-29](date_number)
+    - when was my [back from Meal](event) at [2019-06-29](date_number)
+    - can you check my [back from Meal](event) at [2023-06-29](date_number)
+    - tell me my [back from Meal](event) at [2018-06-29](date_number)
+    - please tell my [back from Meal](event) at [2022-06-29](date_number)
+    - my [back from Meal](event) at [2020-06-29](date_number)
+    - when was my [out for meal](event) at [2019-06-29](date_number)
+    - can you check my [out for meal](event) at [2023-06-29](date_number)
+    - tell me my [out for meal](event) at [2018-06-29](date_number)
+    - please tell my [out for meal](event) at [2022-06-29](date_number)
+    - what is my time of [out for meal](event) at [2010-06-29](date_number)
+    - my employee id is [16678913](employee_number)
+    - employee id is [1841230](employee_number)
+    - [1117898](employee_number)
+    - the date is [2010-06-29](date_number)
+    - the date is [2019-06-29](date_number)
+    - [2022-04-03](date_number)
+    - [2022-04-03](date_number)    
+    - [2022-04-03](date_number)    
